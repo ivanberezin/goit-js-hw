@@ -8,7 +8,7 @@ do {
   input = prompt('enter the number');
   if (input === null) {
     break;
-  } else if (input !== null) {
+  } else {
     input = Number(input);
     const notANumber = Number.isNaN(input);
     if (notANumber) {

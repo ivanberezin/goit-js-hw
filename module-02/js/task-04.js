@@ -1,17 +1,22 @@
 'use strict';
 
-const formatString = function (string) {
-  const symbols = string.split('');
+// const formatString = function (string) {
+//   const symbols = string.split('');
 
-  if (symbols.length > 40) {
-    symbols.splice(40, symbols.length - 40, '...');
-    const stringCut = symbols.join('');
-    return stringCut;
-  }
+//   if (symbols.length > 40) {
+//     symbols.splice(40, symbols.length - 40, '...');
+//     const stringCut = symbols.join('');
+//     return stringCut;
+//   }
 
-  const stringUnCut = symbols.join('');
-  return stringUnCut;
-};
+//   const stringUnCut = symbols.join('');
+//   return stringUnCut;
+// };
+
+const formatString = (string, stringMaxLength = 40) =>
+  string.length > stringMaxLength
+    ? `${string.slice(0, stringMaxLength - 1)}...`
+    : string;
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 

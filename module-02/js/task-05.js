@@ -2,10 +2,11 @@
 
 const checkForSpam = function (message) {
   const messageNormalized = message.toLowerCase();
-  const spam = messageNormalized.includes('spam');
-  const sale = messageNormalized.includes('sale');
 
-  if (spam || sale) {
+  if (
+    messageNormalized.includes('spam') ||
+    messageNormalized.includes('sale')
+  ) {
     return true;
   }
 
