@@ -1,12 +1,14 @@
 'use strict';
 
-const itemsLink = document.querySelectorAll('.item');
+const categories = document.querySelector('#categories');
 
-console.log(`В списке ${itemsLink.length} категории`);
+const categoriesQuantity = categories.children.length;
+console.log(`В списке ${categoriesQuantity} категории`);
 
-itemsLink.forEach(itemLink => {
-  const categoryNameLink = itemLink.querySelector('h2');
-  const categoryListLink = itemLink.querySelector('ul');
-  console.log(`Категория: ${categoryNameLink.textContent}`);
-  console.log(`Количество элементов: ${categoryListLink.children.length}`);
-});
+const categoriesString = [...categories.children]
+  .map(
+    categoryChild =>
+      `Категория: ${categoryChild.children[0].textContent};\nКоличество элементов: ${categoryChild.children[1].children.length}`,
+  )
+  .join('\n');
+console.log(categoriesString);

@@ -13,9 +13,10 @@ function onInput(event) {
     inputSymbolsLink.value.length ==
     inputSymbolsLink.getAttribute('data-length')
   ) {
-    input.setAttribute('class', 'valid');
+    input.classList.remove('invalid');
+    input.classList.add('valid');
     return;
   }
-  input.setAttribute('class', 'invalid');
-  return;
+  input.classList.remove('valid');
+  input.classList.add('invalid');
 }
